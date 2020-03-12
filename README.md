@@ -1,6 +1,6 @@
-# my-nuxt-template
+# nuxt-firebase-demo
 
-> My exceptional Nuxt.js project
+> Nuxt/Firebase/Typescript
 
 ## Build Setup
 
