@@ -1,0 +1,40 @@
+html {
+  word-spacing: 1px;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+  position: relative;
+  height: theme('height.full');
+  background: theme('backgroundColor.white');
+  color: theme('textColor.gray.900');
+  font-family: theme('fontFamily.sans."Noto Sans"');
+  @media (prefers-color-scheme: dark) {
+    background: theme('backgroundColor.black');
+    color: theme('textColor.gray.100');
+  }
+}
+a, button {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  outline: none;
+}
+
+.is-loading {
+  @apply flex items-center justify-center px-20 h-screen;
+  @screen lg {
+    @apply px-40;
+  }
+  svg {
+    @apply w-full;
+  }
+}
+
+img[lazy=loading] {
+  @apply px-20 py-8;
+  @screen lg {
+    @apply px-48 py-10;
+  }
+}
