@@ -2,6 +2,19 @@
 
 > Nuxt/Firebase/Typescript
 
+## Firestore
+``` yml
+users: Collection
+  name: string
+  createdAt: Timestamp
+  updatedAt: Timestamp
+  articles: SubCollection
+    title: string
+    content: string
+    createdAt: Timestamp
+    updatedAt: Timestamp
+```
+
 ## Build Setup
 
 ``` bash
