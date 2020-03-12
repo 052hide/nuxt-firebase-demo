@@ -115,7 +115,42 @@ const config: Configuration = {
   //     eslint: true
   //   }
   // }
-  generate: {},
+  generate: {
+    async routes() {
+      let firebaseApp: firebase.app.App
+      if (firebase.apps.some((app) => app.name === 'jamstack')) {
+        firebaseApp = firebase.app('jamstack')
+      } else {
+        const fbConfig: FirebaseOptions = {
+          apiKey: FB_APY_KEY,
+          authDomain: FB_AUTH_DOMAIN,
+          databaseURL: FB_DATABASE_URL,
+          projectId: FB_PROJECT_ID,
+          storageBucket: FB_STORAGE_BUCKET,
+          messagingSenderId: FB_MESSAGING_SENDER_ID,
+          appId: FB_APP_ID,
+          measurementId: FB_MEASUREMENT_ID
+        }
+        firebaseApp = firebase.initializeApp(fbConfig, 'jamstack')
+      }
+      const db = firebaseApp.firestore()
+      const fbSettings: firebase.firestore.Settings = {}
+      db.settings(fbSettings)
+
+      const routes: {
+        route: string
+      }[] = []
+      const collectionName = ''
+      const collection = await db.collection(collectionName).get()
+      collection.forEach((doc) => {
+        routes.push({
+          route: `/${collectionName}/${doc.id}`
+        })
+      })
+      await firebase.app('jamstack').delete()
+      return routes
+    }
+  }
   ignore: ['**/*.stories.*']
 }
 
