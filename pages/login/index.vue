@@ -1,6 +1,13 @@
 <template>
   <div class="login-page">
-    <div>
+    <div class="menu">
+      <h3>メニュー</h3>
+      <ul>
+        <li><nuxt-link to="/">>Top</nuxt-link></li>
+        <li><nuxt-link to="/database">>Database</nuxt-link></li>
+      </ul>
+    </div>
+    <div class="login">
       <div v-if="getAuthUserInfo()">
         <button @click="logout()">
           ログアウト
@@ -74,3 +81,28 @@ export default class LoginForm extends Vue {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+input {
+  width: 250px;
+  height: 2rem;
+  margin-bottom: 10px;
+}
+button {
+  width: 120px;
+  height: 2rem;
+  border: 1px solid #333;
+  border-radius: 4px;
+}
+.menu {
+  margin: 2rem 0;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #333;
+  h3 {
+    margin-bottom: 10px;
+  }
+  a {
+    text-decoration: underline;
+  }
+}
+</style>
