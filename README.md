@@ -46,42 +46,41 @@ $ firebase deploy
 ## Firebase
 
 ### プラグイン
-
+```
 以下ファイル参照
-
 - ~/plugins/firebase
 
 auth、db、functionsそれぞれ分けてプラグイン化している
+```
 
 ### auth
 
+```
 以下のファイル参考
-
 - ~/middleware/auth.ts
 - ~/pages/login/index.vue
 
 ストア(~/store/.auth.ts)を使用し認証情報を保持する
-
 認証情報の永続化には~/plugins/firebase/authでsetPersistenceまたはvuexの永続化を行うことで可能
+```
 
 ### Firestore
 
+```
 以下のファイル参考
-
 - ~/models
 
 データ取得はqueries、データ書き込みはcommandsで行うようにしている
-
 NoSQLでデータの非正規化を行う可能性があるためCURDではなくCQRSのようなに近い設計としている
+```
 
 ### functions
 
+```
 以下のファイル参考
-
 - ~/functions
 
 src以下のソースを修正する
-
 functionsディレクトリでビルドを行うことでlibディレクトリに出力される
-
 modules以下に各functionをファイル単位で作成し、index.tsで読み込むようにしている
+```
