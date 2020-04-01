@@ -71,7 +71,7 @@ auth、db、functionsそれぞれ分けてプラグイン化している
 - ~/models
 
 データ取得はqueries、データ書き込みはcommandsで行うようにしている
-NoSQLでデータの非正規化を行う可能性があるためCURDではなくCQRSのようなに近い設計としている
+NoSQLでデータの非正規化を行う可能性があるためCURDではなくCQRSに近い設計としている
 ```
 
 ### functions
