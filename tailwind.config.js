@@ -5,6 +5,7 @@
  ** Default: https://github.com/tailwindcss/tailwindcss/blob/master/stubs/defaultConfig.stub.js
  */
 module.exports = {
+  purge: false,
   theme: {
     fill: (theme) => ({
       light: theme('colors.gray.600'),
